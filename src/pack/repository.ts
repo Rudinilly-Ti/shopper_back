@@ -1,14 +1,7 @@
-import database from '../database';
+import database from "../database";
 
-type Product = {
-    code: number;
-    name: string;
-    sales_price: number;
-    cost_price: number;
-}
-
-export async function getProductById(id: string): Promise<Product[]> {
-    const query = `SELECT * FROM products WHERE code = ${id}`;
+export async function getPackById(id: number): Promise<Pack[]> {
+    const query = `SELECT * FROM packs WHERE pack_id = ${id}`;
 
     return new Promise((resolve, reject) => {
         database.query(query, (err, result) => {
@@ -21,8 +14,8 @@ export async function getProductById(id: string): Promise<Product[]> {
     });
 }
 
-export async function updateProduct(id: string, sales_price: number) {
-    const query = `UPDATE products SET sales_price = ${sales_price} WHERE code = ${id}`;
+export async function getPackByProductId(id: number): Promise<Pack[]> {
+    const query = `SELECT * FROM packs WHERE product_id = ${id}`;
 
     return new Promise((resolve, reject) => {
         database.query(query, (err, result) => {
@@ -33,4 +26,4 @@ export async function updateProduct(id: string, sales_price: number) {
             resolve(result);
         });
     });
-};
+}

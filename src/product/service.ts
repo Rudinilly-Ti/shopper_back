@@ -1,6 +1,6 @@
 import { getProductById, updateProduct } from './repository';
 
-export async function getProduct(id: string) {
+export async function getProduct(id: number) {
     const products = await getProductById(id);
     const product = products[0];
     if (!product) {
@@ -10,7 +10,7 @@ export async function getProduct(id: string) {
     return product;
 }
 
-export async function validateProduct(id: string, sales_price: number): Promise<string[]> {
+export async function validateProduct(id: number, sales_price: number): Promise<string[]> {
     let errors: string[] = [];
     const products = await getProductById(id);
     const product = products[0];
@@ -40,6 +40,7 @@ export async function validateProduct(id: string, sales_price: number): Promise<
     return errors;
 }
 
-export function updateProductPrice(id: string, sales_price: number) {
+export function updateProductPrice(id: number, sales_price: number) {
     return updateProduct(id, sales_price);
 };
+
