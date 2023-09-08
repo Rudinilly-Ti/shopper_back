@@ -1,4 +1,5 @@
 import database from "../database";
+import { Pack } from "./dto";
 
 export async function getPackById(id: number): Promise<Pack[]> {
     const query = `SELECT * FROM packs WHERE pack_id = ${id}`;

@@ -11,7 +11,7 @@ packsRouter.get("/:id", (req, res) => {
             res.json(result);
         })
         .catch(err => {
-            res.status(400).json(err);
+            res.json(err);
         });
 });
 
@@ -23,7 +23,7 @@ packsRouter.get("/product/:id", (req, res) => {
             res.json(result);
         })
         .catch(err => {
-            res.status(400).json(err);
+            res.json(err);
         });
 });
 

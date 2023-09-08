@@ -7,7 +7,7 @@ productsRouter.get('/:id', (req, res) => {
     getProduct(parseInt(id)).then((result) => { 
          res.json(result); 
     }).catch((err) => {
-        res.status(400).json(err);
+        res.json(err);
     });
 });
 
@@ -17,7 +17,7 @@ productsRouter.post('/validate', async (req, res) => {
         res.json(result);
     }
     ).catch((err) => {
-        res.status(400).json(err);
+        res.json(err);
     });
 });
 

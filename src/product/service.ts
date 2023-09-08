@@ -4,7 +4,7 @@ export async function getProduct(id: number) {
     const products = await getProductById(id);
     const product = products[0];
     if (!product) {
-        return { error: 'Product not found' };
+         throw  { message: 'Product not found'};
     }
 
     return product;
@@ -14,14 +14,6 @@ export async function validateProduct(id: number, sales_price: number): Promise<
     let errors: string[] = [];
     const products = await getProductById(id);
     const product = products[0];
-
-    if (!sales_price) {
-        errors.push('Price is required');
-    }
-
-    if(typeof sales_price !== 'number') {
-        errors.push('Price must be a number');
-    }
 
     if (sales_price < 0) {
         errors.push('Price cannot be negative');
