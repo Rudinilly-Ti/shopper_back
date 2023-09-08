@@ -1,10 +1,15 @@
 # Projeto BackEnd - Shopper
 ## Comandos :
-### npm install
-### npm run dev
-
+Apos clonar o projeto, execute os seguintes comandos:
+```bash	
+npm install
+npm run dev
+```	
 ## Variaveis de ambiente:
-### DB_USER
-### DB_PASSWORD
-### DB_NAME
-### DB_PORT
+Adicione um arquivo .env na raiz do projeto com as seguintes variaveis:
+```bash
+DB_USER
+DB_PASSWORD
+DB_NAME
+DB_PORT
+```
